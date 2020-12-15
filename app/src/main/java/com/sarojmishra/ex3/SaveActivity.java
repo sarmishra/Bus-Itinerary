@@ -55,6 +55,15 @@ public class SaveActivity extends AppCompatActivity {
         String stopName = editText1.getText().toString();
         String Keyword =editText2.getText().toString();
        // insert into db values(busNum,busstop,busRoute);
+        MySQliteHelper helper = new MySQliteHelper(getApplicationContext());
+        helper.insertbusStopData(stopName, Keyword);
+        Toast.makeText(getApplicationContext(), "Inserted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), helper.getStop().get(0).getUniqueName(), Toast.LENGTH_SHORT).show();
+
+
+
+
+
 
 
         Log.d("Edittext",editText.getText().toString() + editText1.getText() + editText2.getText());
